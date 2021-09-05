@@ -1,8 +1,9 @@
 from oaipmh.client import Client
 from oaipmh.metadata import MetadataRegistry, oai_dc_reader
 import tqdm
+import os
 
-URL = 'http://export.arxiv.org/oai2?verb=ListIdentifiers&set=cs,econ&from=2006-01-01&until=2020-12-01'
+URL = 'http://export.arxiv.org/oai2?verb=ListIdentifiers&from=2006-01-01&until=2020-12-01'
 registry = MetadataRegistry()
 registry.registerReader('oai_dc', oai_dc_reader)
 client = Client(URL, registry)
